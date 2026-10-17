@@ -9,6 +9,7 @@ let humidity;
 let ec;
 let records;
 let submit;
+const vitalsCard // from commit 2
 //let variables are better for Dynamic inputs than const variables
 //better implementation than the commented out code
 
@@ -22,6 +23,21 @@ function recordsaver(){
 }
 
 render();
+
+vitalsCard.addEventListener('submit', () => { event.preventDefault()} //added event listner for interactivity 
+
+//commit 2
+
+const container = document.createDocumentFragment();
+
+const listItem = document.createElement('li');
+listItem.innerHTML = ``  //This line block will house the inner html in later commits
+
+function secureScriptFeature(str){
+        //Security features for not leaving scripts vulnerable to injections
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g,'&gt;');
+} //this will be moved lower in the code in future commits
+
 
 //End of first commit
 bayNumber = document.getElementById("bay_num").value;
