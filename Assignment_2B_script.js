@@ -17,7 +17,7 @@ const vitalsCard // from commit 2
 //first commit for 2B
 const STORAGE_KEY_2B = 'agriculture_watch'
 
-function recordsaver(){
+function saveLoader(){
   const storeConfirmed = localStorage.setItem(STORAGE_KEY_2B) , JSON.stringify(records));
 }
 
@@ -33,9 +33,20 @@ function loadSave
         }
 
     }
-    
 
-render();
+
+function render(){
+
+            queueCount.textContent = records.length;
+
+            if(records.length === 0) {
+                emptyList.classList.remove('hidden');
+                listOfRecords.innerHTML = listItem.innerHTML;
+                return;
+            }
+
+
+            emptyList.add('hidden');
 
 vitalsCard.addEventListener('submit', () => { event.preventDefault()} //added event listner for interactivity 
 
