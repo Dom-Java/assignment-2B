@@ -17,10 +17,23 @@ const vitalsCard // from commit 2
 //first commit for 2B
 const STORAGE_KEY_2B = 'agriculture_watch'
 
-
 function recordsaver(){
   const storeConfirmed = localStorage.setItem(STORAGE_KEY_2B) , JSON.stringify(records));
 }
+
+function loadSave
+        try{
+            //establish connection with your data store
+            const storeConfirmed = localStorage.getItem(STORAGE_KEY_2B);
+          
+            return storeConfirmed ? JSON.parse(storeConfirmed) : [];
+        }catch (e) {
+            console.error("failed to load records from data store, error");
+            return [];
+        }
+
+    }
+    
 
 render();
 
@@ -31,7 +44,24 @@ vitalsCard.addEventListener('submit', () => { event.preventDefault()} //added ev
 const container = document.createDocumentFragment();
 
 const listItem = document.createElement('li');
-listItem.innerHTML = ``  //This line block will house the inner html in later commits
+listItem.innerHTML = `
+
+    <div id="card"  class="card">
+            <p>Bay Number:</p>
+            <p id="bay-num-out"></p>
+            <p>Acidity:</p>
+            <p id="pH-num-out"></p>
+            <p>Temperature</p>
+            <p id="temp-num-out"></p>
+            <p>Electrical conductivity</p>
+            <p id="ec-num-out"></p>
+            <p>Relative Humidity</p>
+            <p id="humidity-num-out"></p>
+            <p>Criticality</p>
+            <p id="Criticality"></p>
+      </div>
+
+`  //This line block will house the inner html in later commits
 
 function secureScriptFeature(str){
         //Security features for not leaving scripts vulnerable to injections
