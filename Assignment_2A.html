@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agriculture Watch</title>
+    <link rel="stylesheet" href="Assignment_2A.css" />
+  </head>
+  <nav class="nav">
+  
+      <a href="" class="logo-container">
+        <img class="logo" src="logo.png" alt="" />
+      </a>
+    </span>
+
+    <h1 class="nav-item site-heading site-text">Agriculture Watch</h1>
+
+    <a href="#" class="btn nav-item">About us</a>
+    <a href="#" class="btn nav-item">login</a>
+  </nav>
+  <body class="page-bg">
+    <main class="main">
+      <aside class="forms-side">
+        <header>
+          <h2 class="site-text">Input Telemetry Data:</h2>
+        </header>
+        <div>
+          <form
+            class="health-form"
+            id="tele_form"
+            action="Assignment_2A.html"
+            method="post"
+            onsubmit="return false"
+          >
+            <label class="form-element" for="tele_form" 
+              >Bay Number #</label
+            >
+            <input type="number" class="form-input-bg" id="bay_num" name="bay_num" min="1" max="50" placeholder="# between 1 and 50"/>
+
+            <label class="form-element" for="tele_form">pH level #</label>
+            <input type="number" class="form-input-bg" id="pH_num" name="pH_num" min="0" max="14" placeholder="# from 0 to 14, example: 6.4"/>
+
+            <label class="form-element" for="tele_form"
+              >Temperature (F) </label
+            >
+            <input type="number" class="form-input-bg" id="temp_num" name="temp_num" min="45" max="110" placeholder="Temp between 45 and 110"/>
+
+            <label class="form-element" for="tele_form" 
+              >Electrical conductivity mS/cm </label
+            >
+            <input type="number" class="form-input-bg" id="ec_num" name="ec_num" min=".05" max="5.5" placeholder="# of ec between .5 and 5.5"/>
+
+            <label class="form-element" for="tele_form" 
+              >Relative Humidity (%)</label
+            >
+            <input type="number" class="form-input-bg" id="hum_num" name="hum_num" min="10" max="110" placeholder="Percent between 10 and 110"/>
+
+            
+            <div class="form-element">
+              <button class="btn" for="tele_form" type="submit" id="submit_btn" onclick="newCard()">
+                Submit Form
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- This will be used for the user to fill out their info -->
+      </aside>
+
+      <section class="dashboard-side">
+        <header>
+          <h2 class="site-text">Agricultural Health Dashboard: </h2>
+          <div> <button id="purge" class="btn dashboard-header" onclick="clearCard()">Purge queue</button></div>
+        </header>
+          <div id="card"  class="card">
+            <p>Bay Number:</p>
+            <p id="bay-num-out"></p>
+            <p>Acidity:</p>
+            <p id="pH-num-out"></p>
+            <p>Temperature</p>
+            <p id="temp-num-out"></p>
+            <p>Electrical conductivity</p>
+            <p id="ec-num-out"></p>
+            <p>Relative Humidity</p>
+            <p id="humidity-num-out"></p>
+            <p>Criticality</p>
+            <p id="Criticality"></p>
+          </div>
+        
+        <!-- This will display the users dashboard -->
+      </section>
+    </main>
+  </body>
+  <script src="Assignment_2B_script.js"></script>
+  <footer class="footer">
+    <p class="site-text footer-text">&copy; Agriculture Watch 2026</p>
+  </footer>
+</html>
+
+<!-- notes for use cases: -->
+<!-- Story 1 (Controlled Sensor Entry): As a greenhouse technician, I want to record telemetry readings for a specific bay with real-time numeric bounds enforcement so that invalid sensor inputs (e.g., pH outside 0 to 14 or negative values) are rejected immediately.
+● Story 2 (Status Feedback): As an agronomist, I want the portal to calculate and display an environmental status tag ("Optimal", "Warning", "Critical Hazard") immediately upon input submission.
+● Story 3 (Offline Session Persistence): As a field worker moving between greenhouses, I want logged sensor entries saved to localStorage so that refreshing the browser retains active log history.
+● Story 4 (Log Removal & Queue Purging): As an operations supervisor, I want to delete resolved logs individually or purge the entire log history.
+● Story 5 (Dynamic Out-of-Bound Indicators): As a technician typing values into the form, I want input fields to show instant visual error feedback whenever entered numbers exceed acceptable plant growth ranges.
+Notes for -->

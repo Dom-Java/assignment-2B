@@ -1,0 +1,162 @@
+css_selector {
+  css-property: css-value;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --bg-color: #5b7051;
+  --bg-form-board: #a4c992;
+  --bg-secondary: #929d7c;
+  --border-color: #7cb376;
+  --bg-card: #cae2bc;
+  --accent-color: #6ecd7e;
+  --text-color: #ffff;
+  --input-bg: #86c190;
+  transition: 7s;
+}
+
+.page-bg {
+  background-image: url("leaves.png");
+}
+
+.nav {
+  background-image: url(nav\ and\ footer\ bg.png);
+  background-color: var(--bg-secondary);
+  display: flex;
+  border-bottom: 3px solid var(--border-color);
+  padding: 0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  align-items: normal;
+}
+
+.site-heading {
+  margin-right: 24rem;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: var(--accent-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  padding: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+  justify-self: center;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to bottom right, #1d461df1, #031e098b);
+}
+.main {
+  display: flex;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  flex-grow: initial;
+}
+.logo {
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 7%;
+  height: 100%;
+}
+.logo-container {
+  align-items: start;
+}
+.forms-side {
+  padding: 0.5rem;
+  display: flex;
+  background-color: var(--bg-form-board);
+  flex-direction: column;
+  vertical-align: top;
+  margin: 0.5rem;
+  background-color: var(--bg-form-board);
+  width: 50%;
+  height: 28rem;
+  align-items: center;
+  border: 4px solid var(--border-color);
+  border-radius: 4%;
+}
+
+.form-element {
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.form-input-bg {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+}
+.form-input-bg:hover {
+  background-image: linear-gradient(to bottom right, #1d461df1, #031e098b);
+}
+
+.health-form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.dashboard-header {
+  margin-bottom: 1rem;
+}
+.dashboard-side {
+  padding: 0.5rem;
+  display: flex;
+
+  flex-direction: column;
+  margin: 0.5rem;
+  background-color: var(--bg-form-board);
+  width: 50%;
+  height: 28rem;
+  border: 4px solid var(--border-color);
+  align-items: center;
+  border-radius: 4%;
+}
+
+.card {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.footer {
+  background-image: url(nav\ and\ footer\ bg.png);
+  background-color: var(--bg-secondary);
+  height: max-content;
+  position: absolute;
+  bottom: 0px;
+  height: 2rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-top: 3px solid var(--border-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  margin-left: 32rem;
+}
+
+.site-text {
+  font-family: Georgia, "Times New Roman", Times, serif, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-color);
+}
