@@ -3,7 +3,9 @@ Assignment 2B:
 A few notes:
 
 -app.js (in the zip file Assignment_2B_complete_final) is the most recent js file and is compatible with the css and html
+
 -the css and html are commits from 2A that I moved over to 2B
+
 (the large amount of commits is due to slight file changes, there are a total of 9 relevant commits, plus the final zip file)
 
 
