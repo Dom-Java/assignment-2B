@@ -53,30 +53,8 @@ function render(){
 
 const container = document.createDocumentFragment();
 
-function addHTML () { //Function to add cards to the dashboard
-event.preventDefault;
-const listItem = document.createElement('li');
-listItem.innerHTML = `
-
-    <div id="card"  class="card">
-            <p>Bay Number:</p>
-            <p id="bay-num-out"></p>
-            <p>Acidity:</p>
-            <p id="pH-num-out"></p>
-            <p>Temperature</p>
-            <p id="temp-num-out"></p>
-            <p>Electrical conductivity</p>
-            <p id="ec-num-out"></p>
-            <p>Relative Humidity</p>
-            <p id="humidity-num-out"></p>
-            <p>Criticality</p>
-            <p id="Criticality"></p>
-      </div>
-
-`  //This line block will house the inner html in later commits
-
-document.getElementById(dashboard).appendChild(listItem);
-
+function addHTML () {
+   //Function to add cards to the dashboard (this was merged with the new card function, kept for historical record)
 }
 function secureScriptFeature(str){
         //Security features for not leaving scripts vulnerable to injections
@@ -132,6 +110,30 @@ function newCard() {
     document.getElementById("Criticality").innerText = "warning";
   }
 }
+
+event.preventDefault;
+const listItem = document.createElement("div");
+listItem.innerHTML = `
+
+    <div id="card"  class="card">
+            <p>Bay Number:</p>
+            <p id="bay-num-out"></p>
+            <p>Acidity:</p>
+            <p id="pH-num-out"></p>
+            <p>Temperature</p>
+            <p id="temp-num-out"></p>
+            <p>Electrical conductivity</p>
+            <p id="ec-num-out"></p>
+            <p>Relative Humidity</p>
+            <p id="humidity-num-out"></p>
+            <p>Criticality</p>
+            <p id="Criticality"></p>
+      </div>
+
+`; //This line block will house the inner html in later commits
+
+document.getElementById(dashboard).appendChild(listItem);
+
 
 formInput.addEventListener("input", newCard); //looks for input for formInput, then executes newCard
 // try {
