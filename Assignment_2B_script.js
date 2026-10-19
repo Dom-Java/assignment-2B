@@ -35,15 +35,15 @@ function loadSave (){ //Used to reload records from the local storage
     }
 
 
-function render(){
+function render(){ //This function was not used in my code, it is kept for historical purposes
 
-            queueCount.textContent = records.length;
+            // queueCount.textContent = records.length;
 
-            if(records.length === 0) {
-                emptyList.classList.remove('hidden');
-                listOfRecords.innerHTML = listItem.innerHTML;
-                return;
-            }
+            // if(records.length === 0) {
+            //     emptyList.classList.remove('hidden');
+            //     listOfRecords.innerHTML = listItem.innerHTML;
+            //     return;
+            // }
 
           }
             emptyList.add('hidden');
@@ -111,8 +111,9 @@ function newCard() {
   }
 }
 
-event.preventDefault;
+
 const listItem = document.createElement("div");
+listItem.addEventListener(onsubmit,event.preventDefault) //stops page reloads
 listItem.innerHTML = `
 
     <div id="card"  class="card">
@@ -131,6 +132,9 @@ listItem.innerHTML = `
       </div>
 
 `; //This line block will house the inner html in later commits
+
+// let freshCard = document.getElementById(card).innerHTML; //test to replace the writing of html in js, it was unsuccessful so I commented it out
+// freshCard += freshCard; 
 
 document.getElementById(dashboard).appendChild(listItem);
 
@@ -173,4 +177,4 @@ function clearCard() {
 
 
 secureScriptFeature();
-render();
+// render(); 
