@@ -161,7 +161,7 @@ function clearCard() {
   temperature = null;
   humidity = null;
   localStorage.clear();
-
+    event.preventDefault;
   let currentCard = document.getElementById("card"); //hides the cleared cards. remove this line of code to see other the categories for the card designate themselves as none.
   currentCard.style.display = "none";
   }
