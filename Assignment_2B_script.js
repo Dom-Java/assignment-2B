@@ -1,5 +1,5 @@
 
-(function () { //add all code inside this single function for 2b
+//removed iife function, I know the functionality of it, but it continued to give me errors and prevented my code from running properly
 //initializing values
 // let formInput;
 let bayNumber;
@@ -9,7 +9,7 @@ let humidity;
 let ec;
 let records;
 let submit;
-const vitalsCard // from commit 2
+let vitalsCard; // from commit 2
 //let variables are better for Dynamic inputs than const variables
 //better implementation than the commented out code
 
@@ -18,17 +18,17 @@ const vitalsCard // from commit 2
 const STORAGE_KEY_2B = 'agriculture_watch'
 
 function saveLoader(){
-  const storeConfirmed = localStorage.setItem(STORAGE_KEY_2B) , JSON.stringify(records));
+  const storeConfirmed = localStorage.setItem((STORAGE_KEY_2B) , JSON.stringify(records));
 }
 
-function loadSave
+function loadSave (){ //Used to reload records from the local storage
         try{
-            //establish connection with your data store
+            
             const storeConfirmed = localStorage.getItem(STORAGE_KEY_2B);
           
             return storeConfirmed ? JSON.parse(storeConfirmed) : [];
         }catch (e) {
-            console.error("failed to load records from data store, error");
+            console.error("local data not found");
             return [];
         }
 
@@ -45,15 +45,16 @@ function render(){
                 return;
             }
 
-
+          }
             emptyList.add('hidden');
 
-vitalsCard.addEventListener('submit', () => { event.preventDefault()} //added event listner for interactivity 
 
 //commit 2
 
 const container = document.createDocumentFragment();
 
+function addHTML () { //Function to add cards to the dashboard
+event.preventDefault;
 const listItem = document.createElement('li');
 listItem.innerHTML = `
 
@@ -74,6 +75,9 @@ listItem.innerHTML = `
 
 `  //This line block will house the inner html in later commits
 
+document.getElementById(dashboard).appendChild(listItem);
+
+}
 function secureScriptFeature(str){
         //Security features for not leaving scripts vulnerable to injections
         return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g,'&gt;');
@@ -152,7 +156,10 @@ function clearCard() {
   temperature = null;
   humidity = null;
   localStorage.clear();
-}
+
+  let currentCard = document.getElementById("card"); //hides the cleared cards. remove this line of code to see other the categories for the card designate themselves as none.
+  currentCard.style.display = "none";
+  }
 
 // Critical
 // ○ (pH < 5.0 OR pH > 7.5) AND (Temp < 55F OR Temp > 95F) AND (EC < 0.2 OR EC > 4.5 ) AND (RH < 30 OR RH > 90 )
@@ -160,4 +167,8 @@ function clearCard() {
 // ○ (5.5 <= pH <= 6.5) AND (64.4F <= Temp <= 71.6F) AND (1.0 <= EC <= 2.0) AND (50 <= RH <= 70)
 // ● Warning
 // ○ (NOT Critical) AND (NOT Optimal)
-) ();
+
+
+
+secureScriptFeature();
+render();
