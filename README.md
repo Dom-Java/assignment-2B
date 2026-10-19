@@ -4,6 +4,7 @@ A few notes:
 -Assignment_2B_functional.js is the most recent js file and is compatible with the css and html
 -the css and html are commits from 2A that I moved over to 2B
 
+
 Requirement breakdown for project:
 Scope Isolation & Storage Key Definition: 
 Wrap all logic in an Immediately Invoked
